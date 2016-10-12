@@ -1,0 +1,15 @@
+.transition (@duration:400ms) {
+	-webkit-transition: all @duration;  
+	-moz-transition:    all @duration;
+	-ms-transition:     all @duration; 
+	-o-transition:      all @duration;  
+}
+
+header {
+	a{
+		padding: 10px;
+		color: red;
+
+		.transition();
+	}
+}
