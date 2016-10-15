@@ -1,0 +1,401 @@
+@import 'fontello.css';
+
+@font-face{
+	font-family: MostardesignBold;
+	src: url('../font/Mostardesign - Sofia Pro Bold.otf');
+}
+
+@font-face{
+	font-family: MostardesignLight;
+	src: url('../font/Mostardesign - Sofia Pro Light.otf');
+}
+
+@font-face{
+	font-family: MostardesignMedium;
+	src: url('../font/Mostardesign - Sofia Pro Medium.otf');
+}
+
+@font-face{
+	font-family: MostardesignRegular;
+	src: url('../font/Mostardesign - Sofia Pro Bold.otf');
+}
+
+
+@whitesmoke: #fcfbf9;
+@white: #fff;
+@dark-blue: #002d47;
+@light-blue: #58799d;
+@grey: #dddad6;
+
+
+@900h:   ~"only screen and (max-height: 900px)";
+@700h:   ~"only screen and (max-height: 700px)";
+
+@1750:   ~"only screen and (min-width: 1750px)";
+
+
+.transition(@speed:400ms){
+	-webkit-transition: all @speed;
+	-moz-transition: all @speed;
+	-o-transition: all @speed;
+	transition: all @speed;
+}
+
+.vertical-align-wrap{
+	display: table;
+	height: 100%;
+	margin: auto;
+	position: relative;
+	
+	.vertical-align-content{
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		padding: 0 10px;
+	}
+
+}
+
+body{
+	background: @whitesmoke;
+	font-family: MostardesignRegular;
+	color: @dark-blue;
+}
+
+a{
+	color: #a68141;
+
+	.transition();
+
+	&:hover{
+		color: #fff;
+	}
+}
+
+h1{
+	font: normal 50px/50px MostardesignLight;
+}
+
+h3{
+	font: normal 18px/20px MostardesignMedium;	
+	margin-bottom: 10px;
+}
+
+h4{
+	font: normal 14px/22px MostardesignLight;
+	color: @light-blue;	
+}
+
+h5{
+	font: normal 11px/16px MostardesignLight; 
+	margin-top: 10px;
+}
+
+
+p{
+	font: 14px/24px MostardesignLight;
+	max-width: 660px;
+
+	&.blue{
+		color: @light-blue;
+		margin: 60px 0 33px;
+		max-width: 492px;
+	}
+
+	&.small{
+		font-size: 13px;
+		line-height: 20px;
+	}
+}
+
+.body-wrap{
+	min-height: 100vh;
+	.transition(500ms);
+
+	&.open{
+		-webkit-transform: translate3d(235px, 0, 0);
+	    transform: translate3d(235px, 0, 0);
+
+	    .content-all-wrap{
+	    	&:after{
+    		    width: 100%;
+			    height: 100%;
+			    opacity: 1;
+	    	}
+	    }
+		
+	}
+}
+
+.menu-wrap{
+	width: 235px;
+	height: 100%;
+	overflow: auto;
+	left: 0;
+	top: 0;
+	position: absolute;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+
+	.transition(500ms);
+
+	ul{
+		width: 100%;
+
+		li{
+			font: 14px/1.2em MostardesignLight;
+			border: 1px solid @grey;
+			border-top: none;
+			line-height: 50px;
+			box-sizing: border-box;
+			cursor: pointer;
+
+			.transition();
+
+			&:hover{
+			    background: rgba(0,0,0,0.1);
+			}
+
+			span{
+				margin-left: 12px;
+			}
+
+			.arrow{
+				font-size: 26px;
+				float: right;
+			}
+		}
+
+		.submenu-wrap{
+			display: none;
+
+			li{
+				padding-left: 12px;
+				border: none;
+				background: @white;
+				border-top: 1px solid @grey;
+			}
+		}
+	}
+}
+
+.bcg-image{
+    width: 15px;
+    height: 14px;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.heart{
+	background-image: url('../images/icon-heart.svg');
+	width: 16px;
+	height: 14px;
+	display: inline-block;
+}
+
+.flag{
+	background-image: url('../images/nl-flag.png');
+	width: 18px;
+	height: 11px;
+	display: inline-block;
+}
+
+.bag{
+	background-image: url('../images/bag.png');
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+header{
+	.header-content{
+		text-align: center;
+		margin: 20px;
+		padding-bottom: 20px;
+		font-family: MostardesignLight;
+		border-bottom: 1px solid #ddd;
+
+		.header-left{
+			position: absolute;
+			left: 20px;
+			top: 20px;
+			font-size: 13px;
+
+			.flag{
+				display: inline-block;
+				margin-right: 5px;
+			    vertical-align: middle;
+			}
+
+			.flag-title{
+				font-size: 12px;
+			    vertical-align: middle;
+			}
+
+			.links{
+				margin: auto 20px;
+				display: inline-block;
+
+				a:hover{
+					font-family: MostardesignMedium;
+				}
+			}
+		}
+
+		.header-right{
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			font: 13px/1.1em MostardesignLight;
+
+			a:hover{
+				font-family: MostardesignMedium;
+			}
+
+			.bag{
+				margin-left: 30px;
+			}
+
+			.counters{
+				margin-bottom: 20px;
+			}
+
+			.icon-search{
+			    font-size: 18px;
+			}
+		}
+
+		.header-center{
+			display: inline-block;
+		}
+
+		.header-title{
+			font: 33px/1.1em MostardesignMedium;
+			color: @dark-blue;
+			margin-bottom: 20px;
+		}
+
+		.main-menu{
+			font-size: 18px;
+
+			li{
+				display: inline-block;
+				border-bottom: 2px solid transparent;
+				padding-bottom: 2px;
+				color: @dark-blue;
+				margin: 0 20px;
+
+				.transition();
+
+				&:hover:not(.icon){
+					font-family: MostardesignMedium;
+					border-color: @dark-blue;
+				}
+			}
+		}
+
+		a{
+			color: @dark-blue;
+		}
+		
+	}
+}
+
+.menu-button{
+	cursor: pointer;
+	font-size: 30px;
+	margin: 0 15px;
+	display: inline-block;
+	vertical-align: middle;
+
+	&.icon-menu:before{
+		line-height: 0.8em;
+		display: block;
+	}
+}
+
+.icon{
+	display: inline-block;
+}
+
+.line{
+	width: 95%;
+	height: 1px;
+	background: @grey;
+	margin: 20px auto;
+}
+
+footer{
+	background: @dark-blue;
+	width: 100%;
+	line-height: 50px;
+	padding: 0 20px;
+	box-sizing: border-box;
+
+	a{
+		color: @white;
+
+		&:hover{
+			color: @light-blue;
+		}
+	}
+
+	p{
+		font-size: 11px;
+		float: left;
+	}
+
+	.social-wrap{
+		float: right;
+
+		.icon{
+			font-size: 16px;
+			margin: 0 5px;
+
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+	}
+
+}
+
+
+.content-all-wrap{
+	&:after{
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    width: 0;
+	    height: 0;
+	    background: rgba(0,0,0,0.2);
+	    content: '';
+	    opacity: 0;
+
+        -webkit-transition: opacity 0.5s;
+	    transition: opacity 0.5s;
+	}
+}
+
+.content-wrap{
+	.content-width{
+		padding: 0 20px;
+		box-sizing: border-box;
+		max-width: 1440px;
+		margin: auto;
+	}
+}
+
+.gallery{
+	text-align: center;
+
+	img{
+		width: 100%;
+		max-width: 1440px;
+		display: inline-block;
+	}
+}
